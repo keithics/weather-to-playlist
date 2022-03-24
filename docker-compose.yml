@@ -24,7 +24,6 @@ services:
 
   weather-api:
     container_name: weather-api
-    env_file: development.env
     environment:
       - DATABASE_URL=mongodb://weather-mongo:27017/weather
     build:
