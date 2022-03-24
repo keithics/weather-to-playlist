@@ -13,7 +13,7 @@ describe(' Temperature to Genre Conversion', () => {
     expect(tempToGenre(30)).toBe(Genre.Pop);
   });
 
-  it("If it's a bit chilly (between 10 and 14 degrees, return Rock)", () => {
+  it("If it's a bit chilly (between 10 and 14 degrees, return Rock", () => {
     expect(tempToGenre(14)).toBe(Genre.Rock);
     expect(tempToGenre(10)).toBe(Genre.Rock);
     expect(tempToGenre(12)).toBe(Genre.Rock);

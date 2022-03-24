@@ -48,6 +48,5 @@ export const seedSpotifyPlaylists = async (req: Request, res: Response) => {
     }
   }
 
-  // no need to wait
   res.send({ message: 'ok' });
 };

@@ -120,7 +120,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://api.openweathermap.org/data/2.5/weather?appid=b77e07f479efe92156376a8b07640ced&q=alaska&units=metric",
+					"raw": "https://api.openweathermap.org/data/2.5/weather?appid=b77e07f479efe92156376a8b07640ced&q=cebu&units=metric",
 					"protocol": "https",
 					"host": [
 						"api",
@@ -139,7 +139,7 @@
 						},
 						{
 							"key": "q",
-							"value": "alaska"
+							"value": "cebu"
 						},
 						{
 							"key": "units",
