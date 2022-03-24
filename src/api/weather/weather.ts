@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { catchAsync } from '@keithics/errors/lib/catch-async';
+import { catchAsync } from '@keithix/errors/lib/catch-async';
 import Weather from './weather.model';
 import config from 'server/config';
 import { differenceInMinutes } from 'date-fns';

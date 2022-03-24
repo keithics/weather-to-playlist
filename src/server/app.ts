@@ -5,10 +5,10 @@ import * as Sentry from '@sentry/node';
 import cors from 'cors';
 import * as path from 'path';
 import routes from './routes';
-import errorHandler from '@keithics/errors/lib/handler.error';
+import errorHandler from '@keithix/errors/lib/handler.error';
 import config from './config';
-import sentry from '@keithics/core/lib/sentry';
-import logger from '@keithics/core/lib/logger';
+import sentry from '@keithix/core/lib/sentry';
+import logger from '@keithix/core/lib/logger';
 import { mongo } from './mongo';
 
 /**

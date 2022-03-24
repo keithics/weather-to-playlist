@@ -1,7 +1,7 @@
 {
-  "name": "notification-service",
+  "name": "weather-service",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "main": "dist/index.js",
   "scripts": {
     "d-push": "docker push registry.digitalocean.com/keithics/weather-service:latest",
@@ -13,14 +13,15 @@
     "start": "node dist/index.js",
     "test": "NODE_PATH=./src jest --coverage --verbose --runInBand --forceExit --detectOpenHandles",
     "dev": "NODE_PATH=./src ts-node-dev --respawn --clear --transpile-only --rs src/index.ts",
-    "pretty": "npx prettier --write **/*",
+    "pretty": "npx prettier --write ./src",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx && npx prettier --check ./src && tsc --noEmit"
   },
   "dependencies": {
-    "@keithics/auth": "^2.0.1",
-    "@keithics/core": "^2.0.12",
-    "@keithics/errors": "^2.0.5",
-    "@keithics/joi-validators": "^2.0.6",
+    "@keithix/auth": "^2.0.1",
+    "@keithix/core": "^2.0.12",
+    "@keithix/errors": "^2.0.5",
+    "@keithix/joi-validators": "^2.0.6",
+    "@sentry/tracing": "^6.19.2",
     "axios": "^0.26.0",
     "cors": "^2.8.5",
     "date-fns": "^2.28.0",

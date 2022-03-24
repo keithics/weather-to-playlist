@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from '../server/config';
-import { ArkErrorOther, ArkErrorValidation } from '@keithics/errors/lib/ark.assert';
+import { ArkErrorOther, ArkErrorValidation } from '@keithix/errors/lib/ark.assert';
 import { WeatherSchema } from '../api/weather/weather.model';
 
 export interface ResponseTemperature {

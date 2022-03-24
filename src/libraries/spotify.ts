@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ArkErrorOther } from '@keithics/errors/lib/ark.assert';
+import { ArkErrorOther } from '@keithix/errors/lib/ark.assert';
 import config from '../server/config';
 
 // these are the only labels we need

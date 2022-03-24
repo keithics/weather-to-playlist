@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "e5bc44f4-b5ee-4179-9978-412e51b31146",
+		"name": "Weather to Tracks API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Seed Spotify tracks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/spotify",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"spotify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tracks By City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"city\":\"alaska\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/weather",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tracks By Lat/Lon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"coordinates\":{\n        \"lat\":41.4925,\n        \"lon\":99.9018\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/weather",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weather by lat/long",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?lat=-22.9056&lon=-47.0608&appid=b77e07f479efe92156376a8b07640ced&units=metric",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-22.9056"
+						},
+						{
+							"key": "lon",
+							"value": "-47.0608"
+						},
+						{
+							"key": "appid",
+							"value": "b77e07f479efe92156376a8b07640ced"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weather by City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?appid=b77e07f479efe92156376a8b07640ced&q=alaska&units=metric",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "b77e07f479efe92156376a8b07640ced"
+						},
+						{
+							"key": "q",
+							"value": "alaska"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get spotify token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "11",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://accounts.spotify.com/api/token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Spotify Playlists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQC2EV2ekw4_wwKsjhBJtJh5iOXeSZF4Sm4fZbnF-Z6DOOifNkeFz5hqZwt-QuHtHC4vQJ-EfUxPCF3Q0_ySzrjs8pvIqECxBvvufb-OMmnfxJilwgiiCy1EDzOAgRz_e1wVjzrJ_185NBen35u4zT1H4izcNCUx4AFlttLTnvMYjN0WxXAM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/me/playlists",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"me",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Spotify Playlist by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "BQC2EV2ekw4_wwKsjhBJtJh5iOXeSZF4Sm4fZbnF-Z6DOOifNkeFz5hqZwt-QuHtHC4vQJ-EfUxPCF3Q0_ySzrjs8pvIqECxBvvufb-OMmnfxJilwgiiCy1EDzOAgRz_e1wVjzrJ_185NBen35u4zT1H4izcNCUx4AFlttLTnvMYjN0WxXAM",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.spotify.com/v1/playlists/0qBZroxTwVJPjyhTYNPU6Q?fields=tracks.items(track(name,href))",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"playlists",
+						"0qBZroxTwVJPjyhTYNPU6Q"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "tracks.items(track(name,href))"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8080"
+		}
+	]
+}
