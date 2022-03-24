@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@keithix/auth": "^2.0.1",
-    "@keithix/core": "^2.0.12",
+    "@keithix/core": "^2.0.18",
     "@keithix/errors": "^2.0.5",
     "@keithix/joi-validators": "^2.0.6",
     "@sentry/tracing": "^6.19.2",

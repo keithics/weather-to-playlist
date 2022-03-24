@@ -1,0 +1,52 @@
+version: '3.4'
+
+services:
+  weather-mongo:
+    image: mongo:4.1.8-xenial
+    container_name: weather-mongo
+    restart: unless-stopped
+    env_file: development.env
+    volumes:
+      - dbdata:/data/db
+    networks:
+      - app-network
+    ports:
+      - "27017:27017"
+
+  weather-mongo-seed:
+    build: ./mongo
+    container_name: weather-mongo-seed
+    links:
+      - weather-mongo
+    networks:
+      - app-network
+
+
+  weather-api:
+    container_name: weather-api
+    env_file: development.env
+    environment:
+      - DATABASE_URL=mongodb://weather-mongo:27017/weather
+    build:
+      context: .
+      target: build
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    restart: always
+    ports:
+      - "8080:8080"
+    links:
+      - weather-mongo
+    networks:
+      - app-network
+    command: npm run dev
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+  node_modules:

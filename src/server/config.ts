@@ -14,7 +14,7 @@ const {
 } = process.env;
 
 const config = {
-  MONGO_URL: DATABASE_URL || 'mongodb://localhost:27017/tracks',
+  MONGO_URL: DATABASE_URL || 'mongodb://localhost:27018/weather',
   MONGO_DEBUG: MONGO_DEBUG || false,
   LOGTAIL_TOKEN: LOGTAIL_TOKEN || 'xxxxx',
   PROJECT_NAME: 'WEATHER SERVICE',

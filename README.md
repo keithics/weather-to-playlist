@@ -11,6 +11,10 @@ Converts a city or coordinates into playlists using Spotify API
 3. run `npm i`
 4. run `npm run dev`
 
+### Via Docker with database seeding
+
+simply run `docker-compose up`
+
 ### API
 
 Demo API: `https://weather-service-yx6ym.ondigitalocean.app`
