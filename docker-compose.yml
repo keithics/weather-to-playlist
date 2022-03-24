@@ -26,6 +26,9 @@ services:
     container_name: weather-api
     environment:
       - DATABASE_URL=mongodb://weather-mongo:27017/weather
+      - SPOTIFY_TOKEN=xxxx
+      - WEATHER_API=xxxx
+      - MONGO_DEBUG=true
     build:
       context: .
       target: build

@@ -4,16 +4,17 @@ Converts a city or coordinates into playlists using Spotify API
 
 **Requirements**: NodeJS 16.11+ and MongoDB 4.4
 
-### Development
+### Development (No Database Seeding)
 
-1. rename development.sample.env to development.env
+1. Rename development.sample.env to development.env
 2. Update env like mongo url, and other apis
 3. run `npm i`
 4. run `npm run dev`
 
-### Via Docker with database seeding
+### Docker with Database Seeding
 
-simply run `docker-compose up`
+1. Update env like mongo url, and other apis in docker-compose file
+2. Run `docker-compose up`
 
 ### API
 
@@ -29,14 +30,16 @@ Demo API: `https://weather-service-yx6ym.ondigitalocean.app`
 
 1. You need to manually get Spotify token which expires every hour
 2. Spotify playlist is hardcoded
+3. If you are building from source not via docker-compose - you need to update spotify token in the env file and run the
+   seed endpoint `/spotify` to get all the playlist tracks
 
 ### Linting
 
-Simply run  `npm run lint`
+`npm run lint`
 
 ### Tests
 
-Simply run  `npm run test`
+`npm run test`
 
 # License
 
