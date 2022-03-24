@@ -1,10 +1,10 @@
-import {Request, Response} from 'express';
-import {catchAsync} from '@keithics/errors/lib/catch-async';
+import { Request, Response } from 'express';
+import { catchAsync } from '@keithics/errors/lib/catch-async';
 import Weather from './weather.model';
 import config from 'server/config';
-import {differenceInMinutes} from 'date-fns';
-import {getWeatherByAddress, ResponseTemperature} from '../../libraries/weather';
-import {tempToGenre} from '../../libraries/helper';
+import { differenceInMinutes } from 'date-fns';
+import { getWeatherByAddress, ResponseTemperature } from '../../libraries/weather';
+import { tempToGenre } from '../../libraries/helper';
 import Spotify from '../spotify/spotify.model';
 
 /**

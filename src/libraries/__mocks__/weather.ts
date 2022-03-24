@@ -1,4 +1,4 @@
-import {WeatherSchema} from '../../api/weather/weather.model';
+import { WeatherSchema } from '../../api/weather/weather.model';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const getWeatherByAddress = (body: WeatherSchema) => {
